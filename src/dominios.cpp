@@ -10,6 +10,22 @@ using namespace std;
 //using std::find;
 //using std::string;
 
+bool Telefone::validarValor(string valor) {
+
+    int tamanho = valor.length();
+    if((tamanho - 5 ) == 9){
+    cout << "9 numeros" << endl;
+
+    };
+
+    }
+    return true;
+}
+
+void Telefone::setValor(string valor) {
+    validarValor(valor);
+    this->telefone = valor;
+}
 
 // Capacidade
 bool Capacidade::validarValor(int valor) {
@@ -21,6 +37,23 @@ bool Capacidade::validarValor(int valor) {
 void Capacidade::setValor(int valor) {
     validarValor(valor);
     this->capacidade = valor;
+}
+
+// Tipo
+bool Tipo::validarValor(string valor) {
+    if(valor.compare("auto") == 0 || valor.compare("farsa") == 0 ||
+        valor.compare("comédia") == 0 || valor.compare("melodrama") == 0 ||
+        valor.compare("drama") == 0 || valor.compare("monólogo") == 0 ||
+        valor.compare("musical") == 0 || valor.compare("opera") == 0 ||
+        valor.compare("revista") == 0)
+        return true;
+    throw invalid_argument("Erro no parametro da classe Tipo.");
+
+}
+
+void Tipo::setValor(string valor) {
+    validarValor(valor);
+    this->tipo = valor;
 }
 
 // Cargo
@@ -107,6 +140,11 @@ void Email::setValor(string valor) {
     this->email = valor;
 }
 
+
+// ############################################ ERRO ######################
+
+
+
 void Data::tokenize(std::string const &str, const char delim,
             std::vector<std::string> &out) {
     // construct a stream from the string
@@ -117,6 +155,7 @@ void Data::tokenize(std::string const &str, const char delim,
         out.push_back(s);
     }
 }
+
 
 //Data
 bool Data::validarValor(string valor) {
@@ -143,7 +182,8 @@ void Data::setValor(string valor) {
     this->data = valor;
 }
 
-// 00, 01, 02, 03, 04, 05
+
+
 //Horario
 bool Horario::validarValor(string valor) {
     return true;
@@ -156,14 +196,7 @@ void Horario::setValor(string valor) {
 
 // ----------------
 
-bool Tipo::validarValor(string valor) {
-    return true;
-}
 
-void Tipo::setValor(string valor) {
-    validarValor(valor);
-    this->tipo = valor;
-}
 
 // ----------------
 
