@@ -1,12 +1,14 @@
 #include <iostream>
 #include "dominios.h"
 #include "entidades.h"
-#include "testes.h"
+#include "teste.h"
+#include <stdio.h>
+
 
 using namespace std;
 
 int main()
-{
+{/*
 
     // NOME DO USER **
     Nome testeNome;
@@ -36,12 +38,16 @@ int main()
     // CODIGO DE VALIDAÇÃO
     Codigo testeCodigo;
     testeCodigo.setValor("AA1212");
-    cout << testeCodigo.getValor() << endl;
+    cout << testeCodigo.getValor() << endl;*/
 
     // DATA
     Data testeData;
-    testeData.setValor("09/09/2001");
+    testeData.setValor("10/09/2001");
     cout << testeData.getValor() << endl;
+
+    cout << "jeelo" << endl;
+    printf("OLa");
+    /*
 
     // TIPO DO TEATRO
     Tipo testeTipo;
@@ -67,7 +73,7 @@ int main()
     Telefone testeTelefone;
     testeTelefone.setValor("(62)-993786281");
     cout<< testeTelefone.getValor() << endl;
-
+*/
     return 0;
 }
 

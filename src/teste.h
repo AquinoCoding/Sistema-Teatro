@@ -14,7 +14,7 @@ class TesteEmail {
         bool sucesso(const Email &valor);
         bool teste(string);
 
-}
+};
 
 
 #endif // TESTE_H_INCLUDED

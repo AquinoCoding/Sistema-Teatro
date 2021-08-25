@@ -1,13 +1,9 @@
-/*
-    @author: Igor Silva de Oliveira Cardoso
-
-*/
-
 #ifndef DOMINIOS_H_INCLUDED
 #define DOMINIOS_H_INCLUDED
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -22,10 +18,24 @@ class Codigo {
 		}
 };
 
+class Matricula {
+    private:
+        string matricula;
+        bool validarValor(string);
+    public:
+        void setValor(string);
+		string getValor() const {
+            return matricula;
+		}
+};
+
 class Data {
     private:
         string data;
         bool validarValor(string);
+
+        void tokenize(string const &str, const char delim, vector<string> &out);
+
 
     public:
         void setValor(string);
@@ -118,6 +128,7 @@ class Capacidade {
         }
 };
 
+
 class Cargo {
     private:
         string cargo;
@@ -129,6 +140,7 @@ class Cargo {
             return cargo;
 		}
 };
+
 
 class Classificacao {
     private:

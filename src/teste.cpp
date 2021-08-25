@@ -1,8 +1,8 @@
-#include "testes.h"
+#include "teste.h"
 
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de classe de teste de unidade.
-
+/*
 void TUCodigo::setUp(){
     codigo = new Codigo();
     estado = SUCESSO;

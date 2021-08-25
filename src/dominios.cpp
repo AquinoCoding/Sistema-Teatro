@@ -2,7 +2,8 @@
 #include <stdexcept>
 #include <ctype.h>
 #include <vector>
-
+#include <iostream>
+#include <sstream>
 #include "dominios.h"
 
 using namespace std;
@@ -79,15 +80,6 @@ void Codigo::setValor(string valor) {
     this->codigo = valor;
 }
 
-//Data
-bool Data::validarValor(string valor) {
-    return true;
-}
-void Data::setValor(string valor) {
-    validarValor(valor);
-    this->data = valor;
-}
-
 //Email
 bool Email::validarValor(string valor) {
     int i, parte_local=0, dominio=0, tamanho=valor.length();
@@ -115,6 +107,42 @@ void Email::setValor(string valor) {
     this->email = valor;
 }
 
+void Data::tokenize(std::string const &str, const char delim,
+            std::vector<std::string> &out) {
+    // construct a stream from the string
+    stringstream ss(str);
+
+    string s;
+    while (std::getline(ss, s, delim)) {
+        out.push_back(s);
+    }
+}
+
+//Data
+bool Data::validarValor(string valor) {
+
+    std::string s = valor;
+    const char delim = '/';
+
+    std::vector<std::string> out;
+    tokenize(s, delim, out);
+
+    for (auto &s: out){
+        cout << s << '\n';
+        if (s == "10"){
+            return true;
+        }
+
+    }
+
+    throw invalid_argument("Erro no parametro da classe Data.");
+
+}
+void Data::setValor(string valor) {
+    validarValor(valor);
+    this->data = valor;
+}
+
 // 00, 01, 02, 03, 04, 05
 //Horario
 bool Horario::validarValor(string valor) {
@@ -125,4 +153,18 @@ void Horario::setValor(string valor) {
     validarValor(valor);
     this->horario = valor;
 }
+
+// ----------------
+
+bool Tipo::validarValor(string valor) {
+    return true;
+}
+
+void Tipo::setValor(string valor) {
+    validarValor(valor);
+    this->tipo = valor;
+}
+
+// ----------------
+
 
