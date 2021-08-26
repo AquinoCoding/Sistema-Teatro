@@ -27,13 +27,14 @@ bool Telefone::validarValor(string valor) {
 
     if( valor != invNumber && (tamanho - 5 ) == 9){
         for(i = 0; i <= 66; i++){
-            if (arr[i] == ddd){};
-
-    return true;};
+            if (arr[i] == ddd){
+		return true;
+	    };
+	};
     };
 
-
     throw invalid_argument("Erro no parametro da classe Telefone.");
+
 }
 
 void Telefone::setValor(string valor) {
