@@ -12,23 +12,28 @@ using namespace std;
 
 bool Telefone::validarValor(string valor) {
 	
-    int valor;
-    valor = 88;
-
-    vector<int> arr = {11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 24, 27, 28, 32, 33,34, 35, 37, 38, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 53, 54, 55, 61, 62, 63, 64, 65,66,67,68,69, 71, 73, 74, 75, 77, 79, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 92, 93, 94, 95, 96,97,98,99};
-
-    cout << arr[55] << endl;
-    if (arr[55] == valor){
-    cout << "true" << endl;
-    };
-
+    string ddd = valor.substr(1,2);
     int tamanho = valor.length();
-    if((tamanho - 5 ) == 9){
-    cout << "9 numeros" << endl;
+    int i;
+    string invNumber = "000000000";
+
+    vector<string> arr = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65"};
+	
+	
+    
+    if( valor != invNumber && (tamanho - 5 ) == 9){
+    cout << "true" << endl;
 
     };
+    
+    for(i = 0; i <= 66; i++){
+        if (arr[i] == ddd){
+        cout << "true" << endl;};
+	
+    };
+    
+    throw invalid_argument("Erro no parametro da classe Telefone.");
 
-    }
     return true;
 }
 
