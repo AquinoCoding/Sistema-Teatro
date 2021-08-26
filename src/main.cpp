@@ -42,12 +42,12 @@ int main()
 
     // DATA
     Data testeData;
-    testeData.setValor("10/09/2001");
-    cout << testeData.getValor() << endl;
+    testeData.setValor("10/99/2001");
+    cout << testeData.getValor() << endl;/*
 
     cout << "jeelo" << endl;
     printf("OLa");
-    /*
+
 
     // TIPO DO TEATRO
     Tipo testeTipo;
@@ -57,12 +57,12 @@ int main()
     // EMAIL DO USER
     Email testeEmail;
     testeEmail.setValor("lucasaqs09@gmail.com");
-    cout << testeEmail.getValor() << endl;
+    cout << testeEmail.getValor() << endl;*/
 
     // HORARIO DE INDICAÇÃO
     Horario testeHorario;
     testeHorario.setValor("07:30");
-    cout << testeHorario.getValor() << endl;
+    cout << testeHorario.getValor() << endl;/*
 
     // MATRICULA DO USER
     Matricula testeMatricula;
@@ -73,7 +73,7 @@ int main()
     Telefone testeTelefone;
     testeTelefone.setValor("(62)-993786281");
     cout<< testeTelefone.getValor() << endl;
-*/
-    return 0;
+
+    return 0; */
 }
 

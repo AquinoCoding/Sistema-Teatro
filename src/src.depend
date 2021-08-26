@@ -47,19 +47,19 @@
 1629853712 source:/home/iahobuk/Documentos/tp1-master/src/entidades.cpp
 	"dominios.h"
 
-1629855720 /home/iahobuk/Documentos/tp1-master/src/dominios.h
+1629857351 /home/iahobuk/Documentos/tp1-master/src/dominios.h
 	<iostream>
 	<string>
 	<vector>
 
-1629855850 source:/home/iahobuk/Documentos/tp1-master/src/main.cpp
+1629946926 source:/home/iahobuk/Documentos/tp1-master/src/main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"
 	"teste.h"
 	<stdio.h>
 
-1629856037 /home/iahobuk/Documentos/tp1-master/src/entidades.h
+1629857305 /home/iahobuk/Documentos/tp1-master/src/entidades.h
 	"dominios.h"
 
 1629855314 /home/iahobuk/Documentos/tp1-master/src/teste.h
@@ -68,7 +68,7 @@
 1629856064 source:/home/iahobuk/Documentos/tp1-master/src/teste.cpp
 	"teste.h"
 
-1629856993 source:/home/iahobuk/Documentos/tp1-master/src/dominios.cpp
+1629948174 source:/home/iahobuk/Documentos/tp1-master/src/dominios.cpp
 	<string>
 	<stdexcept>
 	<ctype.h>

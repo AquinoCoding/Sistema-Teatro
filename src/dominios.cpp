@@ -6,36 +6,34 @@
 #include <sstream>
 #include "dominios.h"
 
+
 using namespace std;
+//using std::find;
+//using std::string;
 
 bool Telefone::validarValor(string valor) {
-	
+
     string ddd = valor.substr(1,2);
     int tamanho = valor.length();
     int i;
     string invNumber = "000000000";
 
-    vector<string> arr = {"11", "12", "13", "14", "15", "16", "17", "18", "19", "21", "22", "24", "27", "28", "32", "33", 
-				"34", "35", "37", "38", "41", "42", "43", "44", "45", "46", "47", "48", "49", "51", "53", 
-				"54", "55", "61", "62", "63", "64", "65", "66", "67", "68", "69", "71", "73", "74", "75", 
-				"77", "79", "81", "82", "83", "84", "85", "86", "87", "88", "89", "91", "92", "93", "94", 
-				"95", "96", "97", "98", "99"}
+    vector<string> arr = {"11", "12", "13", "14", "15", "16", "17", "18", "19", "21", "22", "24", "27", "28", "32", "33",
+				"34", "35", "37", "38", "41", "42", "43", "44", "45", "46", "47", "48", "49", "51", "53",
+				"54", "55", "61", "62", "63", "64", "65", "66", "67", "68", "69", "71", "73", "74", "75",
+				"77", "79", "81", "82", "83", "84", "85", "86", "87", "88", "89", "91", "92", "93", "94",
+				"95", "96", "97", "98", "99"};
 
-    
+
     if( valor != invNumber && (tamanho - 5 ) == 9){
-    cout << "true" << endl;
+        for(i = 0; i <= 66; i++){
+            if (arr[i] == ddd){};
 
+    return true;};
     };
-    
-    for(i = 0; i <= 66; i++){
-        if (arr[i] == ddd){
-        cout << "true" << endl;};
-	
-    };
-    
+
+
     throw invalid_argument("Erro no parametro da classe Telefone.");
-
-    return true;
 }
 
 void Telefone::setValor(string valor) {
@@ -156,11 +154,7 @@ void Email::setValor(string valor) {
     this->email = valor;
 }
 
-
-// ############################################ ERRO ######################
-
-
-
+//Data
 void Data::tokenize(std::string const &str, const char delim,
             std::vector<std::string> &out) {
     // construct a stream from the string
@@ -172,36 +166,35 @@ void Data::tokenize(std::string const &str, const char delim,
     }
 }
 
-
-//Data
 bool Data::validarValor(string valor) {
 
-    std::string s = valor;
-    const char delim = '/';
-
     std::vector<std::string> out;
-    tokenize(s, delim, out);
+    tokenize(valor, '/', out);
 
-    for (auto &s: out){
-        cout << s << '\n';
-        if (s == "10"){
+    if ((out[0].length() == 2 && out[1].length() == 2 && out[2].length() == 4) &&
+        (stoi(out[0]) >= 1 && stoi(out[0]) <= 31 && stoi(out[1]) >= 1 && stoi(out[1]) <= 12) &&
+        (stoi(out[2]) >= 2000 && stoi(out[2]) <= 9999))
             return true;
-        }
 
-    }
+
 
     throw invalid_argument("Erro no parametro da classe Data.");
 
 }
+
 void Data::setValor(string valor) {
     validarValor(valor);
     this->data = valor;
 }
 
+// ############################################ ERRO ######################
 
 
 //Horario
 bool Horario::validarValor(string valor) {
+
+
+
     return true;
 }
 
@@ -209,11 +202,5 @@ void Horario::setValor(string valor) {
     validarValor(valor);
     this->horario = valor;
 }
-
-// ----------------
-
-
-
-// ----------------
 
 
