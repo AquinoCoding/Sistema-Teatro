@@ -193,10 +193,34 @@ void Data::setValor(string valor) {
 
 //Horario
 bool Horario::validarValor(string valor) {
-
-
-
-    return true;
+	
+    char* horasChar;
+    string horas = valor;
+    horasChar = &horas[0];
+        
+    int PasshorasChar = horasChar[0] - '0';
+    int PasshorasChar1 = horasChar[1] - '0';
+    int PasshorasChar3 = horasChar[3] - '0';
+    int PasshorasChar4 = horasChar[4] - '0';
+   
+    if(2 >= PasshorasChar){
+        cout << "true - 2 Menor ou Igual == " << PasshorasChar << endl;
+        
+        if(9 >= PasshorasChar1 && PasshorasChar1 <= 1){
+		    cout << "true - 9 Menor ou Igual == " << PasshorasChar1 << endl;
+		    }
+            if( (PasshorasChar3) == 0 || (PasshorasChar3) == 1 || 
+			(PasshorasChar3) == 3 || (PasshorasChar3) == 4){
+			cout << "true - 0,1,3,4 Igual == " << PasshorasChar3 << endl;
+			}
+                if( (PasshorasChar4) == 0 || (PasshorasChar4) == 1 || 
+			(PasshorasChar4) == 3 || (PasshorasChar4) == 4){
+			cout << "true - 0,5,0,5 Igual == " << PasshorasChar4 << endl;
+			return true;
+            		}
+        
+    }
+    throw invalid_argument("Erro no parametro da classe Horario.");
 }
 
 void Horario::setValor(string valor) {
