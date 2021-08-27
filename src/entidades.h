@@ -97,6 +97,80 @@ inline void Participante::setSenha(const Senha &valor) {
     this->senha = valor;
 }
 
+class Peca {
+    private:
+        Codigo identificador;
+        Nome nome;
+        Tipo tipo;
+        Classificacao classificacao;
 
+    public:
+        void setCodigo(const Codigo &valor);
+        string getCodigo(void) const{
+            return identificador.getValor();
+        }
 
+        void setNome(const Nome &valor);
+        string getNome(void) const{
+            return nome.getValor();
+        }
+
+        void setTipo(const Tipo &valor);
+        string getTipo(void) const{
+            return tipo.getValor();
+        }
+
+        void setClassificacao(const Classificacao &valor);
+        string getClassificacao(void) const{
+            return classificacao.getValor();
+        }
+};
+
+inline void Peca::setCodigo(const Codigo &valor) {
+    this->identificador = valor;
+}
+
+inline void Peca::setNome(const Nome &valor) {
+    this->nome = valor;
+
+inline void Peca::setTipo(const Tipo &valor) {
+    this->tipo = valor;
+}
+
+inline void Peca::setClassificacao(const Classificacao &valor) {
+    this->classificacao = valor;
+}
+
+class Sala {
+    private:
+        Codigo identificador;
+        Nome nome;
+        Capacidade capacidade;
+
+    public:
+        void setCodigo(const Codigo &valor);
+        string getCodigo(void) const{
+            return identificador.getValor();
+        }
+
+        void setNome(const Nome &valor);
+        string getNome(void) const{
+            return nome.getValor();
+        }
+        void setCapacidade(const Capacidade &valor);
+        string getCapacidade(void) const{
+            return capacidade.getValor();
+        }
+
+};
+inline void Sala::setCodigo(const Codigo &valor) {
+    this->identificador = valor;
+}
+
+inline void Sala::setNome(const Nome &valor) {
+    this->nome = valor;
+
+inline void Sala::setCapacidade(const Capacidade &valor) {
+    this->capacidade = valor;
+}
 #endif // ENTIDADES_H_INCLUDED
